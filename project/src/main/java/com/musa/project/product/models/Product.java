@@ -1,6 +1,7 @@
-package com.musa.project.Product;
+package com.musa.project.product.domain;
 
-import com.musa.project.Category.Category;
+import com.musa.project.category.Category;
+import com.musa.project.product.dto.ProductRequest;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -48,7 +49,6 @@ public class Product {
     private LocalDateTime updatedAt;
 
 
-    // Constructor (mepa que esta al pedo si uso lombock, testear)
     public Product(ProductRequest request) {
         this.name = request.getName();
         this.description = request.getDescription();

@@ -1,4 +1,4 @@
-package com.musa.project.Product;
+package com.musa.project.product.models;
 
 public enum Region {
     USA,

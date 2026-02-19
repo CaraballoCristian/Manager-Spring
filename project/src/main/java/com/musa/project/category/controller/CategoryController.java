@@ -1,4 +1,4 @@
-package com.musa.project.Category;
+package com.musa.project.category;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;

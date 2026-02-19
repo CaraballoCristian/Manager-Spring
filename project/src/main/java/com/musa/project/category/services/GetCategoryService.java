@@ -1,4 +1,4 @@
-package com.musa.project.Category;
+package com.musa.project.category;
 
 import com.musa.project.Query;
 import lombok.AllArgsConstructor;
@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @Slf4j

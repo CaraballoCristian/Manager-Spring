@@ -1,5 +1,6 @@
-package com.musa.project.Product;
+package com.musa.project.product;
 
+import com.musa.project.product.services.*;
 import lombok.AllArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;

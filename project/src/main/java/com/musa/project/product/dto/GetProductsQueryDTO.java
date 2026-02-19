@@ -1,5 +1,7 @@
-package com.musa.project.Product;
+package com.musa.project.product.dto;
 
+import com.musa.project.product.models.ProductSortBy;
+import com.musa.project.product.models.Region;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

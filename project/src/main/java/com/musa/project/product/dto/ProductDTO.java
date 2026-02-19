@@ -1,15 +1,8 @@
-package com.musa.project.Product;
+package com.musa.project.product;
 
-import com.musa.project.Category.Category;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import com.musa.project.category.Category;
+import com.musa.project.product.domain.Product;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
-import java.time.LocalDateTime;
 
 @Data
 // @EqualsAndHashCode Overrides the equals() method

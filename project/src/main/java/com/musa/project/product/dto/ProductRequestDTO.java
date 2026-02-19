@@ -1,4 +1,4 @@
-package com.musa.project.Product;
+package com.musa.project.product.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,13 +1,15 @@
-package com.musa.project.Product;
+package com.musa.project.product;
 
-import com.musa.project.Category.Category;
-import com.musa.project.Exceptions.ErrorMessage;
-import com.musa.project.Exceptions.InvalidProductException;
-import com.musa.project.Exceptions.ProfanityValidator;
-import com.musa.project.Exceptions.SimpleResponse;
+import com.musa.project.category.Category;
+import com.musa.project.exceptions.ErrorMessage;
+import com.musa.project.exceptions.InvalidProductException;
+import com.musa.project.exceptions.ProfanityValidator;
+import com.musa.project.exceptions.SimpleResponse;
+import com.musa.project.product.domain.Product;
+import com.musa.project.product.domain.Region;
+import com.musa.project.product.dto.ProductRequest;
 import io.micrometer.common.util.StringUtils;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;

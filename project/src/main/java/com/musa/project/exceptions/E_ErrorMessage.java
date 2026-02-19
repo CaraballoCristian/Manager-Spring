@@ -1,4 +1,4 @@
-package com.musa.project.Exceptions;
+package com.musa.project.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,5 +1,7 @@
-package com.musa.project.Product;
+package com.musa.project.product.specifications;
 
+import com.musa.project.product.models.Product;
+import com.musa.project.product.models.Region;
 import org.springframework.data.jpa.domain.Specification;
 
 public class ProductSpecifications {
