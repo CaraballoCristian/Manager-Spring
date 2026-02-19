@@ -31,7 +31,7 @@ public class Product {
 
     private Double price;
 
-    //category
+    // category
     @ManyToOne
     @JoinColumn(name="category_value", referencedColumnName="value")
     private Category category;

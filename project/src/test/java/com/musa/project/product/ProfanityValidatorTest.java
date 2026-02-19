@@ -1,9 +1,9 @@
 package com.musa.project.product;
 
-import com.musa.project.exceptions.ProfanityFilterException;
-import com.musa.project.exceptions.ProfanityValidator;
+import com.musa.project.exceptions.profanity.ProfanityFilterException;
+import com.musa.project.integration.profanity.ProfanityValidator;
 import com.musa.project.product.dto.ProductRequestDTO;
-import com.musa.project.product.dto.ProfanityFilterApiResponseDTO;
+import com.musa.project.integration.profanity.dto.ProfanityFilterApiResponseDTO;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

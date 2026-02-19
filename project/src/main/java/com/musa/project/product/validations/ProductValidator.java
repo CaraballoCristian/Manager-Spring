@@ -2,9 +2,9 @@ package com.musa.project.product.validations;
 
 import com.musa.project.category.models.Category;
 import com.musa.project.exceptions.E_ErrorMessage;
-import com.musa.project.exceptions.InvalidProductException;
-import com.musa.project.exceptions.ProfanityValidator;
-import com.musa.project.exceptions.SimpleResponse;
+import com.musa.project.exceptions.product.InvalidProductException;
+import com.musa.project.integration.profanity.ProfanityValidator;
+import com.musa.project.exceptions.response.SimpleResponse;
 import com.musa.project.product.models.Product;
 import com.musa.project.product.models.E_Region;
 import com.musa.project.product.dto.ProductRequestDTO;

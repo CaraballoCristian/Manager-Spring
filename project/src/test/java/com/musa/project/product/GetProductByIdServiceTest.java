@@ -1,7 +1,7 @@
 package com.musa.project.product;
 
 import com.musa.project.category.models.Category;
-import com.musa.project.exceptions.ProductNotFoundException;
+import com.musa.project.exceptions.product.ProductNotFoundException;
 import com.musa.project.product.models.Product;
 import com.musa.project.product.dto.ProductDTO;
 import com.musa.project.product.repository.ProductRepository;

@@ -1,8 +1,8 @@
 package com.musa.project.product;
 
 import com.musa.project.category.repository.CategoryRepository;
-import com.musa.project.exceptions.InvalidProductException;
-import com.musa.project.exceptions.SimpleResponse;
+import com.musa.project.exceptions.product.InvalidProductException;
+import com.musa.project.exceptions.response.SimpleResponse;
 import com.musa.project.product.models.Product;
 import com.musa.project.product.dto.ProductDTO;
 import com.musa.project.product.dto.ProductRequestDTO;

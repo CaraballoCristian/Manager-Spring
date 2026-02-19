@@ -1,6 +1,6 @@
 package com.musa.project.product;
 
-import com.musa.project.exceptions.ProductNotFoundException;
+import com.musa.project.exceptions.product.ProductNotFoundException;
 import com.musa.project.product.models.Product;
 import com.musa.project.product.repository.ProductRepository;
 import com.musa.project.product.services.DeleteProductService;

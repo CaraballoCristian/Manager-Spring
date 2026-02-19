@@ -1,17 +1,19 @@
 package com.musa.project.product.services;
 
 import com.musa.project.utils.Command;
-import com.musa.project.exceptions.ProductNotFoundException;
+import com.musa.project.exceptions.product.ProductNotFoundException;
 import com.musa.project.product.models.Product;
 import com.musa.project.product.repository.ProductRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Slf4j
 @AllArgsConstructor
+@Transactional
 public class DeleteProductService implements Command<String, Void> {
 
     private final ProductRepository productRepository;
