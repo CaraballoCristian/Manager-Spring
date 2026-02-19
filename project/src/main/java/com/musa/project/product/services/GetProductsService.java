@@ -1,9 +1,14 @@
-package com.musa.project.Product;
+package com.musa.project.product.services;
 
-import com.musa.project.Query;
+import com.musa.project.utils.Query;
+import com.musa.project.product.models.Product;
+import com.musa.project.product.utils.E_ProductSortBy;
+import com.musa.project.product.dto.GetProductsQueryDTO;
+import com.musa.project.product.dto.ProductDTO;
+import com.musa.project.product.repository.ProductRepository;
+import com.musa.project.product.utils.ProductSpecifications;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.http.ResponseEntity;
@@ -11,17 +16,16 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 @Slf4j
 @AllArgsConstructor
-public class GetProductsService implements Query<GetProductsQuery, List<ProductDTO>> {
+public class GetProductsService implements Query<GetProductsQueryDTO, List<ProductDTO>> {
 
     private final ProductRepository productRepository;
 
     @Override
-    public ResponseEntity<List<ProductDTO>> execute(GetProductsQuery query) {
+    public ResponseEntity<List<ProductDTO>> execute(GetProductsQueryDTO query) {
 
         // ---- LOGGER ----
         log.info("GetProductsService query : {}", query);
@@ -34,7 +38,7 @@ public class GetProductsService implements Query<GetProductsQuery, List<ProductD
 
         // ---- SORTING ----
         Sort sort = Optional.ofNullable(query.getProductSortBy())
-                .map(ProductSortBy::toSort)
+                .map(E_ProductSortBy::toSort)
                 .orElse(Sort.unsorted());
 
         // ---- QUERY ----

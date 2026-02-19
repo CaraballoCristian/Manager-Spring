@@ -1,6 +1,6 @@
 package com.musa.project.product.models;
 
-public enum Region {
+public enum E_Region {
     USA,
     CHINA,
     INDIA,

@@ -1,13 +1,13 @@
-package com.musa.project.Product;
+package com.musa.project.product.services;
 
-import com.musa.project.Command;
-import com.musa.project.Exceptions.ProductNotFoundException;
+import com.musa.project.utils.Command;
+import com.musa.project.exceptions.ProductNotFoundException;
+import com.musa.project.product.models.Product;
+import com.musa.project.product.repository.ProductRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 @Slf4j

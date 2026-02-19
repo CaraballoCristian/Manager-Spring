@@ -1,7 +1,14 @@
-package com.musa.project.Product;
+package com.musa.project.product;
 
-import com.musa.project.Category.CategoryRepository;
-import com.musa.project.Exceptions.ProductNotFoundException;
+import com.musa.project.category.repository.CategoryRepository;
+import com.musa.project.exceptions.ProductNotFoundException;
+import com.musa.project.product.models.Product;
+import com.musa.project.product.dto.ProductDTO;
+import com.musa.project.product.dto.ProductRequestDTO;
+import com.musa.project.product.dto.UpdateProductRequestDTO;
+import com.musa.project.product.repository.ProductRepository;
+import com.musa.project.product.services.UpdateProductService;
+import com.musa.project.product.validations.ProductValidator;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -32,10 +39,10 @@ class UpdateProductServiceTest {
     private UpdateProductService updateProductService;
 
     @Mock
-    private UpdateProductRequest updateRequest;
+    private UpdateProductRequestDTO updateRequest;
 
     @Mock
-    private ProductRequest productRequest;
+    private ProductRequestDTO productRequest;
 
     // --------------------------
     // PRODUCT NOT FOUND

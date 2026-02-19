@@ -1,7 +1,7 @@
-package com.musa.project.product.domain;
+package com.musa.project.product.models;
 
-import com.musa.project.category.Category;
-import com.musa.project.product.dto.ProductRequest;
+import com.musa.project.category.models.Category;
+import com.musa.project.product.dto.ProductRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -38,7 +38,7 @@ public class Product {
 
     // This annotation helps to save the enum in the DB with the content instead of the index
     @Enumerated(EnumType.STRING)
-    private Region region;
+    private E_Region region;
 
     // With this annotations, any time we create a new entity or update one,
     // it will be instantly timestamped and saved to the database
@@ -49,12 +49,12 @@ public class Product {
     private LocalDateTime updatedAt;
 
 
-    public Product(ProductRequest request) {
+    public Product(ProductRequestDTO request) {
         this.name = request.getName();
         this.description = request.getDescription();
         this.manufacturer = request.getManufacturer();
         this.price = request.getPrice();
         this.category = new Category(request.getCategory());
-        this.region = Region.valueOf(request.getRegion());
+        this.region = E_Region.valueOf(request.getRegion());
     }
 }

@@ -1,8 +1,8 @@
-package com.musa.project.Exceptions;
+package com.musa.project.exceptions;
 
-import com.musa.project.Configuration.API_KeyReader;
-import com.musa.project.Product.ProductRequest;
-import com.musa.project.Product.ProfanityFilterApiResponse;
+import com.musa.project.utils.API_KeyReader;
+import com.musa.project.product.dto.ProductRequestDTO;
+import com.musa.project.product.dto.ProfanityFilterApiResponseDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -23,7 +23,7 @@ public class ProfanityValidator {
     private static final String API_KEY = API_KeyReader.getApiKey();
 
     // ---- PROFANITY CHECKER ----
-    public boolean hasProfanity(ProductRequest request){
+    public boolean hasProfanity(ProductRequestDTO request){
 
         // ---- HEADERS ----
         HttpHeaders headers = new HttpHeaders();
@@ -32,14 +32,14 @@ public class ProfanityValidator {
 
         try{
             // ---- API CALL ----
-            ResponseEntity<ProfanityFilterApiResponse> responseEntity = restTemplate.exchange(
+            ResponseEntity<ProfanityFilterApiResponseDTO> responseEntity = restTemplate.exchange(
                     "https://api.api-ninjas.com/v1/profanityfilter?text="
                             + request.getName() + " "
                             + request.getDescription() + " "
                             + request.getManufacturer(),
                         HttpMethod.GET, // Setting method
                         entity, // Setting Headers
-                        ProfanityFilterApiResponse.class // Setting response format
+                        ProfanityFilterApiResponseDTO.class // Setting response format
                     );
 
             // ---- LOGGER ----

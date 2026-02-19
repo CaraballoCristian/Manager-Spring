@@ -1,4 +1,4 @@
-package com.musa.project.Security;
+package com.musa.project.security;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

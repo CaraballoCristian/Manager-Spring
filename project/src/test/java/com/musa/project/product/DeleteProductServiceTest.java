@@ -1,6 +1,9 @@
-package com.musa.project.Product;
+package com.musa.project.product;
 
-import com.musa.project.Exceptions.ProductNotFoundException;
+import com.musa.project.exceptions.ProductNotFoundException;
+import com.musa.project.product.models.Product;
+import com.musa.project.product.repository.ProductRepository;
+import com.musa.project.product.services.DeleteProductService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

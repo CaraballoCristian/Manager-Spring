@@ -1,7 +1,7 @@
-package com.musa.project.product;
+package com.musa.project.product.dto;
 
-import com.musa.project.category.Category;
-import com.musa.project.product.domain.Product;
+import com.musa.project.category.models.Category;
+import com.musa.project.product.models.Product;
 import lombok.*;
 
 @Data

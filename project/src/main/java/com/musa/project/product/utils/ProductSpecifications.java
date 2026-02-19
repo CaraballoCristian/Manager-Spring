@@ -1,7 +1,7 @@
-package com.musa.project.product.specifications;
+package com.musa.project.product.utils;
 
 import com.musa.project.product.models.Product;
-import com.musa.project.product.models.Region;
+import com.musa.project.product.models.E_Region;
 import org.springframework.data.jpa.domain.Specification;
 
 public class ProductSpecifications {
@@ -21,7 +21,7 @@ public class ProductSpecifications {
     }
 
     // Region equals
-    public static Specification<Product> hasRegion(Region region) {
+    public static Specification<Product> hasRegion(E_Region region) {
         return (root, query, cb) ->
                 cb.equal(root.get("region"), region);
     }

@@ -1,4 +1,4 @@
-package com.musa.project.configuration;
+package com.musa.project.utils;
 
 import org.springframework.core.io.ClassPathResource;
 

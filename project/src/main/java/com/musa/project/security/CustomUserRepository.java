@@ -1,4 +1,4 @@
-package com.musa.project.Security;
+package com.musa.project.security;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

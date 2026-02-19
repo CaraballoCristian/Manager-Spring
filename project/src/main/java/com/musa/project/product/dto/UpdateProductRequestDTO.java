@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class UpdateProductRequest {
+public class UpdateProductRequestDTO {
     private String id;
-    private ProductRequest request;
+    private ProductRequestDTO request;
 }

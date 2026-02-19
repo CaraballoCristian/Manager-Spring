@@ -1,5 +1,11 @@
-package com.musa.project.product;
+package com.musa.project.product.controller;
 
+import com.musa.project.product.utils.E_ProductSortBy;
+import com.musa.project.product.models.E_Region;
+import com.musa.project.product.dto.GetProductsQueryDTO;
+import com.musa.project.product.dto.ProductDTO;
+import com.musa.project.product.dto.ProductRequestDTO;
+import com.musa.project.product.dto.UpdateProductRequestDTO;
 import com.musa.project.product.services.*;
 import lombok.AllArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
@@ -33,11 +39,11 @@ public class ProductController {
             @RequestParam(required = false) String term,
             @RequestParam(required = false) String orderBy
     ) {
-        return getProductsService.execute(new GetProductsQuery(
-                Region.valueOf(region), //enum
+        return getProductsService.execute(new GetProductsQueryDTO(
+                E_Region.valueOf(region), //enum
                 category,
                 term,
-                ProductSortBy.fromValue(orderBy)//enum
+                E_ProductSortBy.fromValue(orderBy)//enum
         ));
     }
 
@@ -49,14 +55,14 @@ public class ProductController {
 
     // ---- CREATE PRODUCT ----
     @PostMapping("/product")
-    public ResponseEntity<ProductDTO> createProduct(@RequestBody ProductRequest request) {
+    public ResponseEntity<ProductDTO> createProduct(@RequestBody ProductRequestDTO request) {
         return createProductService.execute(request);
     }
 
     // ---- UPDATE PRODUCT ----
     @PutMapping("/product/{id}")
-    public ResponseEntity<ProductDTO> updateProduct(@RequestBody ProductRequest request, @PathVariable String id) {
-        return updateProductService.execute(new UpdateProductRequest(id, request));
+    public ResponseEntity<ProductDTO> updateProduct(@RequestBody ProductRequestDTO request, @PathVariable String id) {
+        return updateProductService.execute(new UpdateProductRequestDTO(id, request));
     }
 
     // ---- DELETE ----

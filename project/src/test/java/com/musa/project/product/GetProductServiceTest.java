@@ -1,19 +1,21 @@
-package com.musa.project.Product;
+package com.musa.project.product;
 
+import com.musa.project.product.models.Product;
+import com.musa.project.product.dto.GetProductsQueryDTO;
+import com.musa.project.product.dto.ProductDTO;
+import com.musa.project.product.repository.ProductRepository;
+import com.musa.project.product.services.GetProductsService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
-import java.util.Optional;
 
 import static org.mockito.Mockito.*;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -37,7 +39,7 @@ public class GetProductServiceTest {
 
         // Act
         ResponseEntity<List<ProductDTO>> response = getProductsService
-                .execute(new GetProductsQuery(null, null, null, null));
+                .execute(new GetProductsQueryDTO(null, null, null, null));
 
         // Assert
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
@@ -61,7 +63,7 @@ public class GetProductServiceTest {
 
         // Act
         ResponseEntity<List<ProductDTO>> response = getProductsService
-                .execute(new GetProductsQuery(null, null, null, null));
+                .execute(new GetProductsQueryDTO(null, null, null, null));
 
         // Assert
         assertThat(response.getStatusCode())

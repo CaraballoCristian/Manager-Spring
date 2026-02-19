@@ -4,7 +4,7 @@ import org.springframework.data.domain.Sort;
 
 import java.util.Arrays;
 
-public enum ProductSortBy {
+public enum E_ProductSortBy {
     nameAsc("name", Sort.Direction.ASC),
     nameDesc("name", Sort.Direction.DESC),
     priceAsc("price", Sort.Direction.ASC),
@@ -13,7 +13,7 @@ public enum ProductSortBy {
     private final String field;
     private final Sort.Direction direction;
 
-    ProductSortBy(String field, Sort.Direction direction) {
+    E_ProductSortBy(String field, Sort.Direction direction) {
         this.field = field;
         this.direction = direction;
     }
@@ -23,10 +23,10 @@ public enum ProductSortBy {
     }
 
     // Searches for the parameter value across all enum elements and return it if exists, else return null
-    public static ProductSortBy fromValue(String value) {
+    public static E_ProductSortBy fromValue(String value) {
         if(value == null) return null;
 
-        return Arrays.stream(ProductSortBy.values())
+        return Arrays.stream(E_ProductSortBy.values())
                 .filter(e -> e.name().equalsIgnoreCase(value))
                 .findFirst()
                 .orElse(null);

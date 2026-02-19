@@ -1,6 +1,6 @@
-package com.musa.project.Security;
+package com.musa.project.security;
 
-import com.musa.project.Query;
+import com.musa.project.utils.Query;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

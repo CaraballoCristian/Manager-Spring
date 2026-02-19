@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public enum ErrorMessage {
+public enum E_ErrorMessage {
     PRODUCT_NOT_FOUND("Product not found"),
     PRODUCT_NAME_CANNOT_BE_EMPTY("Product name cannot be empty"),
     PRODUCT_PRICE_CANNOT_BE_EMPTY("Product price cannot be empty"),

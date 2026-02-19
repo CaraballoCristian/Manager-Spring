@@ -1,4 +1,4 @@
-package com.musa.project.Configuration;
+package com.musa.project.configuration;
 
 import lombok.AllArgsConstructor;
 import org.springframework.cache.Cache;
@@ -25,9 +25,9 @@ public class CacheConfiguration {
         ConcurrentMapCacheManager manager = new ConcurrentMapCacheManager();
 
         manager.setCacheNames(
-                EnumSet.allOf(CacheName.class)
+                EnumSet.allOf(E_CacheName.class)
                     .stream()
-                    .map(CacheName::getValue)
+                    .map(E_CacheName::getValue)
                     .toList()
         );
 

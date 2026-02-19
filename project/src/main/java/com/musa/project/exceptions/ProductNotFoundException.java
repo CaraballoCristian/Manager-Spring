@@ -1,4 +1,4 @@
-package com.musa.project.Exceptions;
+package com.musa.project.exceptions;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -10,7 +10,7 @@ public class ProductNotFoundException extends CustomBaseException {
 
         super(
                 HttpStatus.NOT_FOUND,
-                new SimpleResponse(ErrorMessage.PRODUCT_NOT_FOUND.getMessage())
+                new SimpleResponse(E_ErrorMessage.PRODUCT_NOT_FOUND.getMessage())
         );
 
 

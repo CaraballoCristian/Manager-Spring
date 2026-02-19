@@ -1,5 +1,8 @@
-    package com.musa.project.Category;
+    package com.musa.project.category;
 
+    import com.musa.project.category.models.Category;
+    import com.musa.project.category.repository.CategoryRepository;
+    import com.musa.project.category.services.GetCategoryService;
     import org.junit.jupiter.api.Test;
     import org.junit.jupiter.api.extension.ExtendWith;
     import org.mockito.InjectMocks;

@@ -1,8 +1,13 @@
-package com.musa.project.Product;
+package com.musa.project.product.services;
 
-import com.musa.project.Category.CategoryRepository;
-import com.musa.project.Command;
-import com.musa.project.Exceptions.ProductNotFoundException;
+import com.musa.project.category.repository.CategoryRepository;
+import com.musa.project.utils.Command;
+import com.musa.project.exceptions.ProductNotFoundException;
+import com.musa.project.product.models.Product;
+import com.musa.project.product.dto.ProductDTO;
+import com.musa.project.product.dto.UpdateProductRequestDTO;
+import com.musa.project.product.repository.ProductRepository;
+import com.musa.project.product.validations.ProductValidator;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +18,7 @@ import java.util.Optional;
 @Service
 @Slf4j
 @AllArgsConstructor
-public class UpdateProductService implements Command<UpdateProductRequest, ProductDTO> {
+public class UpdateProductService implements Command<UpdateProductRequestDTO, ProductDTO> {
 
     private final ProductRepository productRepository;
 
@@ -22,7 +27,7 @@ public class UpdateProductService implements Command<UpdateProductRequest, Produ
     private final ProductValidator productValidator;
 
     @Override
-    public ResponseEntity<ProductDTO> execute(UpdateProductRequest request) {
+    public ResponseEntity<ProductDTO> execute(UpdateProductRequestDTO request) {
 
         // ---- LOGGER ----
         log.info("UpdateProductService {}, {}", request, getClass().getSimpleName());

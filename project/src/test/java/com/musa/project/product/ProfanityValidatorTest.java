@@ -1,7 +1,9 @@
-package com.musa.project.Product;
+package com.musa.project.product;
 
-import com.musa.project.Exceptions.ProfanityFilterException;
-import com.musa.project.Exceptions.ProfanityValidator;
+import com.musa.project.exceptions.ProfanityFilterException;
+import com.musa.project.exceptions.ProfanityValidator;
+import com.musa.project.product.dto.ProductRequestDTO;
+import com.musa.project.product.dto.ProfanityFilterApiResponseDTO;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -30,18 +32,18 @@ public class ProfanityValidatorTest {
     @Test
     void profanityValidatorTest_returnsHasProfanity(){
         // Arrange
-        ProfanityFilterApiResponse response = new ProfanityFilterApiResponse(true);
+        ProfanityFilterApiResponseDTO response = new ProfanityFilterApiResponseDTO(true);
 
         when(restTemplate.exchange(
                     anyString(),
                     eq(HttpMethod.GET),
                     any(HttpEntity.class),
-                    eq(ProfanityFilterApiResponse.class)
+                    eq(ProfanityFilterApiResponseDTO.class)
                 )
         ).thenReturn(new ResponseEntity<>(response, HttpStatus.OK));
 
         // Assert
-        assertTrue(profanityValidator.hasProfanity(new ProductRequest(
+        assertTrue(profanityValidator.hasProfanity(new ProductRequestDTO(
                 "testName",
                 "testDescription",
                 "testManufacturer",
@@ -54,18 +56,18 @@ public class ProfanityValidatorTest {
     @Test
     void profanityValidatorTest_returnsHasNoProfanity(){
         // Arrange
-        ProfanityFilterApiResponse response = new ProfanityFilterApiResponse(false);
+        ProfanityFilterApiResponseDTO response = new ProfanityFilterApiResponseDTO(false);
 
         when(restTemplate.exchange(
                         anyString(),
                         eq(HttpMethod.GET),
                         any(HttpEntity.class),
-                        eq(ProfanityFilterApiResponse.class)
+                        eq(ProfanityFilterApiResponseDTO.class)
                 )
         ).thenReturn(new ResponseEntity<>(response, HttpStatus.OK));
 
         // Assert
-        assertFalse(profanityValidator.hasProfanity(new ProductRequest(
+        assertFalse(profanityValidator.hasProfanity(new ProductRequestDTO(
                         "testName",
                         "testDescription",
                         "testManufacturer",
@@ -82,13 +84,13 @@ public class ProfanityValidatorTest {
                         anyString(),
                         eq(HttpMethod.GET),
                         any(HttpEntity.class),
-                        eq(ProfanityFilterApiResponse.class)
+                        eq(ProfanityFilterApiResponseDTO.class)
                 )
         ).thenThrow(new RuntimeException());
 
         // Assert
         assertThrows(ProfanityFilterException.class,
-                () -> profanityValidator.hasProfanity(new ProductRequest(
+                () -> profanityValidator.hasProfanity(new ProductRequestDTO(
                     "testName",
                     "testDescription",
                     "testManufacturer",

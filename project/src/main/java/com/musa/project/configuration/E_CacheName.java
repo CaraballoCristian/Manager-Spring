@@ -1,11 +1,11 @@
 package com.musa.project.configuration;
 
-public enum CacheName {
+public enum E_CacheName {
     PRODUCTS("products");
 
     private final String value;
 
-    CacheName(String value) {
+    E_CacheName(String value) {
         this.value = value;
     }
 

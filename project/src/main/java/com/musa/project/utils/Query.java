@@ -1,4 +1,4 @@
-package com.musa.project;
+package com.musa.project.utils;
 
 import org.springframework.http.ResponseEntity;
 

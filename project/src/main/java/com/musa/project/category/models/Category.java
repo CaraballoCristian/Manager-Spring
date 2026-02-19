@@ -1,4 +1,4 @@
-package com.musa.project.category;
+package com.musa.project.category.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

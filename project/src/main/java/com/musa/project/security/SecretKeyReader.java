@@ -1,4 +1,4 @@
-package com.musa.project.Security;
+package com.musa.project.security;
 
 import org.springframework.core.io.ClassPathResource;
 

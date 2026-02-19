@@ -1,4 +1,4 @@
-package com.musa.project.Exceptions;
+package com.musa.project.exceptions;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

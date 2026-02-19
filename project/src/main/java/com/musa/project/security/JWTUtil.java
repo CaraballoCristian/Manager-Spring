@@ -1,4 +1,4 @@
-package com.musa.project.Security;
+package com.musa.project.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

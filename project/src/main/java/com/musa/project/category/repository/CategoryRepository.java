@@ -1,5 +1,6 @@
-package com.musa.project.category;
+package com.musa.project.category.repository;
 
+import com.musa.project.category.models.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

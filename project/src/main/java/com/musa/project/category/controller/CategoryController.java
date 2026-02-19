@@ -1,5 +1,6 @@
-package com.musa.project.category;
+package com.musa.project.category.controller;
 
+import com.musa.project.category.services.GetCategoryService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

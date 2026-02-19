@@ -1,6 +1,8 @@
-package com.musa.project.category;
+package com.musa.project.category.services;
 
-import com.musa.project.Query;
+import com.musa.project.utils.Query;
+import com.musa.project.category.repository.CategoryRepository;
+import com.musa.project.category.models.Category;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
