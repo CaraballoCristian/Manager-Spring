@@ -10,11 +10,11 @@ Designed with focus on **clean architecture, authentication, testing and modular
 - MySQL
 
 
-##🚀 Installation & Setup
+## 🚀 Installation & Setup
 
 ```bash
 # Clone the repository
-git clone https://github.com/caraballocristian/manager-spring.git
+git clone https://github.com/CaraballoCristian/Manager-Spring.git
 
 cd manager-spring
 
