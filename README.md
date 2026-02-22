@@ -29,12 +29,12 @@ The API will be available at:
 http://localhost:8080
 ```
 
-Windows
+**Windows**
 ```bash
 mvnw.cmd spring-boot:run
 ```
 
-## 🗄️ Database Configuration (Requires a running MySQL instance)
+## 🗄️ Database Configuration
 ```bash
 Example application.properties:
 
@@ -49,7 +49,8 @@ spring.jpa.hibernate.ddl-auto=update
 
 ## DB Creation & Mock Data MySQL Commands
 ```bash
-create database springboot;
+CREATE database IF NOT EXISTS springboot;
+
 INSERT INTO category (value) VALUES
 ('TECH'),
 ('FOOD'),
@@ -90,15 +91,15 @@ Authorization: Bearer YOUR_TOKEN
 
 ---
 
-🔎 Example Endpoints
+## 🔎 Example Endpoints
 
-Authentication
+**Authentication**
 ```bash
 POST /register
 POST /login
 ```
 
-Products
+**Products**
 ```bash
 GET /products
 GET /products/{id}
@@ -107,13 +108,13 @@ PUT /products/{id}
 DELETE /products/{id}
 ```
 
-Categories
+**Categories**
 ```bash
 GET /categories
 POST /categories
 ```
 
-Filtering Example
+**Filtering Example**
 ```bash
 GET /products?name=phone&category=electronics
 ```
