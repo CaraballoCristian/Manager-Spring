@@ -32,7 +32,3 @@ build/
 ### VS Code ###
 .vscode/
 
-
-# Sensitive config
-src/main/resources/api_key.properties
-src/main/resources/jwt_secret_key.properties
