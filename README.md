@@ -50,7 +50,7 @@ Example application.properties:
 #Update these values according to your local MySQL configuration.
 
 spring.datasource.url=jdbc:mysql://localhost:3306/springboot
-spring.datasource.username=root
+spring.datasource.username=yourusername
 spring.datasource.password=yourpassword
 
 spring.jpa.hibernate.ddl-auto=update
