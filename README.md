@@ -117,17 +117,17 @@ Authorization: Bearer YOUR_TOKEN
 
 **Authentication**
 ```bash
-POST /register
-POST /login
+POST /auth/register
+POST /auth/login
 ```
 
 **Products**
 ```bash
 GET /products
 GET /products/{id}
-POST /product
-PUT /product/{id}
-DELETE /delete/{id}
+POST /products
+PUT /products/{id}
+DELETE /products/{id}
 ```
 
 **Categories**
