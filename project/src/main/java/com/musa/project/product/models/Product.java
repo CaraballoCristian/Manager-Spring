@@ -48,7 +48,7 @@ public class Product {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
-
+    // Comes from validator
     public Product(ProductRequestDTO request) {
         this.name = request.getName();
         this.description = request.getDescription();

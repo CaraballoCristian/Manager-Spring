@@ -2,6 +2,7 @@ package com.musa.project.security.auth.controller;
 
 import com.musa.project.security.auth.dto.LoginRequestDTO;
 import com.musa.project.security.auth.dto.LoginResponseDTO;
+import com.musa.project.security.auth.dto.RegisterRequestDTO;
 import com.musa.project.security.auth.service.LoginService;
 import com.musa.project.security.auth.service.RegisterService;
 import lombok.AllArgsConstructor;
@@ -24,7 +25,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<LoginResponseDTO> createUser(@RequestBody LoginRequestDTO request){
+    public ResponseEntity<LoginResponseDTO> createUser(@RequestBody RegisterRequestDTO request){
         return registerService.execute(request);
     }
 

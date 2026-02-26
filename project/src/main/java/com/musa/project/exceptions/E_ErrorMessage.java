@@ -13,7 +13,10 @@ public enum E_ErrorMessage {
     PRODUCT_CATEGORY_MUST_BE_AN_EXISTING_CATEGORY("Category not found"),
     PRODUCT_REGION_MUST_BE_AN_EXISTING_REGION("Region not found"),
     PRODUCT_HAS_PROFANITY("Product cannot be saved due to explicit keywords"),
-    PROFANITY_FILTER_DOWN("Profanity filter external service is down");
+    PROFANITY_FILTER_DOWN("Profanity filter external service is down"),
+    USER_NAME_CANNOT_BE_EMPTY("Username cannot be empty"),
+    USER_PASSWORD_CANNOT_BE_EMPTY("Password cannot be empty"),
+    USER_EMAIL_CANNOT_BE_EMPTY("Email cannot be empty");
 
     private final String message;
 }
