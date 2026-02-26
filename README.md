@@ -102,10 +102,10 @@ PROFANITY_FILTER_API_KEY=YOUR_KEY
 ## 🔐 Authentication Flow
 
 1. Register a user
-POST /register
+POST /auth/register
 
 2. Login
-POST /login
+POST /auth/login
 
 3. Use returned token:
 Authorization: Bearer YOUR_TOKEN
@@ -117,17 +117,17 @@ Authorization: Bearer YOUR_TOKEN
 
 **Authentication**
 ```bash
-POST /register
-POST /login
+POST /auth/register
+POST /auth/login
 ```
 
 **Products**
 ```bash
 GET /products
 GET /products/{id}
-POST /product
-PUT /product/{id}
-DELETE /delete/{id}
+POST /products
+PUT /products/{id}
+DELETE /products/{id}
 ```
 
 **Categories**
