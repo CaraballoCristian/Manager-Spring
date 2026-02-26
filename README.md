@@ -102,10 +102,10 @@ PROFANITY_FILTER_API_KEY=YOUR_KEY
 ## 🔐 Authentication Flow
 
 1. Register a user
-POST /register
+POST /auth/register
 
 2. Login
-POST /login
+POST /auth/login
 
 3. Use returned token:
 Authorization: Bearer YOUR_TOKEN
