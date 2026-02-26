@@ -18,6 +18,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private static final String AUTHORIZATION_HEADER = "Authorization";
     private static final String BEARER_PREFIX = "Bearer ";
 
+    private final JwtService jwtService;
+
+    public JwtAuthenticationFilter(
+            JwtService jwtService
+    ) {
+        this.jwtService = jwtService;
+    }
+
     @Override
     protected void doFilterInternal(
             HttpServletRequest request,
@@ -29,10 +37,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 request.getHeader(AUTHORIZATION_HEADER)
         );
 
-        if (token != null && JWTUtil.validateToken(token)) {
+        if (token != null && jwtService.validateToken(token)) {
 
-            String username = JWTUtil.getUsernameFromToken(token);
-            List<String> roles = JWTUtil.getRolesFromToken(token);
+            String username = jwtService.getUsername(token);
+            List<String> roles = jwtService.getRoles(token);
 
             List<SimpleGrantedAuthority> authorities = roles.stream()
                     .map(SimpleGrantedAuthority::new)

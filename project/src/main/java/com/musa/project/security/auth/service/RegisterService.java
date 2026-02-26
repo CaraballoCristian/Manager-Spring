@@ -6,14 +6,12 @@ import com.musa.project.user.model.User;
 import com.musa.project.user.repository.UserRepository;
 import com.musa.project.utils.Command;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-@Slf4j
 public class RegisterService implements Command<LoginRequestDTO, LoginResponseDTO> {
 
     private final UserRepository userRepository;

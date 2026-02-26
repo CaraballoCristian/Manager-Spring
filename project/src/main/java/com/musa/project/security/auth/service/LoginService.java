@@ -2,10 +2,9 @@ package com.musa.project.security.auth.service;
 
 import com.musa.project.security.auth.dto.LoginRequestDTO;
 import com.musa.project.security.auth.dto.LoginResponseDTO;
-import com.musa.project.security.jwt.JWTUtil;
+import com.musa.project.security.jwt.JwtService;
 import com.musa.project.utils.Query;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -15,10 +14,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-@Slf4j
 public class LoginService implements Query<LoginRequestDTO, LoginResponseDTO> {
 
     private AuthenticationManager authenticationManager;
+    private JwtService jwtService;
 
     @Override
     public ResponseEntity<LoginResponseDTO> execute(LoginRequestDTO request) {
@@ -29,7 +28,8 @@ public class LoginService implements Query<LoginRequestDTO, LoginResponseDTO> {
         );
         Authentication authentication = authenticationManager.authenticate(token);
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        String jwt = JWTUtil.generateToken(request.getUsername());
+
+        String jwt = jwtService.generateToken(request.getUsername());
 
         return ResponseEntity.ok(new LoginResponseDTO(jwt));
     }

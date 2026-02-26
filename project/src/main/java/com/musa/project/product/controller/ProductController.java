@@ -10,12 +10,12 @@ import com.musa.project.product.services.*;
 import lombok.AllArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/products")
 @AllArgsConstructor
 public class ProductController {
 
@@ -31,7 +31,7 @@ public class ProductController {
 
 
     // ---- GET ALL ----
-    @GetMapping("/products")
+    @GetMapping
     @Cacheable("products")
     public ResponseEntity<List<ProductDTO>> getProducts(
             @RequestHeader(value = "region", defaultValue = "USA") String region,
@@ -48,33 +48,29 @@ public class ProductController {
     }
 
     // ---- GET BY ID ----
-    @GetMapping("/products/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<ProductDTO> getProductById(@PathVariable String id) {
         return getProductByIdService.execute(id);
     }
 
     // ---- CREATE PRODUCT ----
-    @PostMapping("/product")
+    @PostMapping
     public ResponseEntity<ProductDTO> createProduct(@RequestBody ProductRequestDTO request) {
         return createProductService.execute(request);
     }
 
     // ---- UPDATE PRODUCT ----
-    @PutMapping("/product/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<ProductDTO> updateProduct(@RequestBody ProductRequestDTO request, @PathVariable String id) {
         return updateProductService.execute(new UpdateProductRequestDTO(id, request));
     }
 
     // ---- DELETE ----
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProductById(@PathVariable String id) {
         return deleteProductService.execute(id);
     }
 
-    // ---- DEBUG HELPER PARA AUTH ----
-    @GetMapping("/debug")
-    public Authentication auth(Authentication auth) {
-        return auth;
-    }
+
 }
 

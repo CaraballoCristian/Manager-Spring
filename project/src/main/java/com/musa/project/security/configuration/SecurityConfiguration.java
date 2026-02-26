@@ -1,6 +1,7 @@
 package com.musa.project.security.configuration;
 
 import com.musa.project.security.jwt.JwtAuthenticationFilter;
+import com.musa.project.security.jwt.JwtService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -22,17 +23,17 @@ public class SecurityConfiguration {
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity security) throws Exception{
+    public SecurityFilterChain securityFilterChain(HttpSecurity security, JwtAuthenticationFilter jwtAuthenticationFilter) throws Exception{
         return security
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers(HttpMethod.GET, "/products").permitAll();
-                    auth.requestMatchers(HttpMethod.POST, "/login").permitAll();
-                    auth.requestMatchers(HttpMethod.POST, "/register").permitAll();
+                    auth.requestMatchers(HttpMethod.GET, "/products/**").permitAll();
+                    auth.requestMatchers(HttpMethod.POST, "/auth/login").permitAll();
+                    auth.requestMatchers(HttpMethod.POST, "/auth/register").permitAll();
                     auth.anyRequest().authenticated();
                 })
                 .addFilterBefore(
-                        jwtAuthenticationFilter(),
+                        jwtAuthenticationFilter,
                         UsernamePasswordAuthenticationFilter.class
                 )
                 .build();
@@ -47,7 +48,9 @@ public class SecurityConfiguration {
     }
 
     @Bean
-    JwtAuthenticationFilter jwtAuthenticationFilter(){
-        return new JwtAuthenticationFilter();
+    JwtAuthenticationFilter jwtAuthenticationFilter(
+            JwtService jwtService
+    ){
+        return new JwtAuthenticationFilter(jwtService);
     }
 }
