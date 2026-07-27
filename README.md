@@ -5,6 +5,10 @@ Designed with focus on **clean architecture, authentication, testing and modular
 
 ---
 
+![Cover](./cover.png)
+
+---
+
 ## ⚙️ Requirements
 - Java 17+
 - MySQL
